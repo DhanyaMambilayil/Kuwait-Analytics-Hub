@@ -634,3 +634,58 @@ button,input{font:inherit}
   }
   .password-nav-item b{display:none}
 }
+
+
+/* BRAND LAYOUT FIX */
+.brand{
+  display:block!important;
+  text-align:left!important;
+}
+
+.brand-name,
+.brand-subtitle{
+  display:block!important;
+  width:100%!important;
+}
+
+.brand-name{
+  margin:0!important;
+}
+
+.brand-subtitle{
+  margin-top:8px!important;
+}
+
+@media(max-width:1000px) and (min-width:721px){
+  .brand-name,
+  .brand-subtitle{
+    display:none!important;
+  }
+
+  .brand{
+    text-align:center!important;
+  }
+
+  .brand::before{
+    content:"AAE";
+    display:block;
+    font-size:19px;
+    font-weight:800;
+  }
+}
+
+@media(max-width:720px){
+  .brand-name,
+  .brand-subtitle{
+    display:block!important;
+  }
+
+  .brand::before{
+    display:none!important;
+    content:none!important;
+  }
+
+  .brand{
+    text-align:center!important;
+  }
+}
