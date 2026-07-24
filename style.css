@@ -849,3 +849,10 @@ button,input{font:inherit}
   font-size:20px!important;
   margin-right:14px!important;
 }
+
+
+/* Automatically generated category navigation */
+#category-navigation{
+  display:contents;
+}
+
