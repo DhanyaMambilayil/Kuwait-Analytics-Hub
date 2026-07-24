@@ -592,3 +592,45 @@ button,input{font:inherit}
   .settings-card{padding:24px 20px}
   .settings-card .primary-button{width:100%}
 }
+
+
+/* Dedicated password navigation item */
+.password-nav-item{
+  width:100%;
+  display:flex;
+  align-items:center;
+  gap:14px;
+  padding:15px 16px;
+  border:0;
+  border-radius:10px;
+  background:transparent;
+  color:var(--white);
+  text-align:left;
+  cursor:pointer;
+  font-weight:700;
+}
+
+.password-nav-item span:first-child{
+  width:24px;
+  text-align:center;
+  font-size:20px;
+}
+
+.password-nav-item:hover,
+.password-nav-item.active{
+  background:var(--white);
+  color:var(--navy);
+}
+
+@media(max-width:1000px){
+  .password-nav-item{justify-content:center}
+  .password-nav-item b{display:none}
+}
+
+@media(max-width:720px){
+  .password-nav-item{
+    padding:10px 8px;
+    justify-content:center;
+  }
+  .password-nav-item b{display:none}
+}
