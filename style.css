@@ -439,6 +439,17 @@ svg{display:block}
   flex-wrap:wrap;
 }
 
+.welcome-line{
+  margin:0 0 6px;
+  color:var(--muted);
+  font-size:13.5px;
+}
+
+.welcome-line strong{
+  color:var(--gold-bright);
+  font-weight:800;
+}
+
 .page-heading h2{
   margin:0;
   font-size:24px;
@@ -768,4 +779,3 @@ svg{display:block}
 #category-navigation{
   display:contents;
 }
-
