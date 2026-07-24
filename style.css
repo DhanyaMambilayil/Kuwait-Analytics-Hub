@@ -243,6 +243,7 @@ svg{display:block}
 
 .brand-subtitle{
   margin-top:6px;
+  margin-left:44px;   /* ← new: aligns "Kuwait" under the wordmark instead of the icon */
   font-size:13px;
   color:var(--muted);
   font-weight:600;
