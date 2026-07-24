@@ -229,21 +229,16 @@ svg{display:block}
   display:flex;
   flex-direction:column;
   line-height:1.15;
+  min-width:0;
 }
 
 .brand-wordmark strong{
-  font-size:15px;
+  display:block;
+  font-size:13.5px;
   font-weight:800;
-  letter-spacing:.4px;
+  letter-spacing:.3px;
   color:var(--white);
-}
-
-.brand-wordmark em{
-  font-style:normal;
-  font-size:12px;
-  font-weight:700;
-  letter-spacing:1.6px;
-  color:var(--gold-bright);
+  white-space:nowrap;
 }
 
 .brand-subtitle{
@@ -360,16 +355,18 @@ svg{display:block}
 .hero-eyebrow{
   margin:0 0 10px;
   color:var(--gold-bright);
+  font-family:"Poppins","Manrope",Arial,sans-serif;
   font-size:12.5px;
-  font-weight:800;
+  font-weight:700;
   letter-spacing:2.2px;
   text-shadow:0 0 14px rgba(244,188,61,.45);
 }
 
 .hero-copy h1{
   margin:0;
+  font-family:"Poppins","Manrope",Arial,sans-serif;
   font-size:clamp(28px,3.4vw,42px);
-  letter-spacing:1px;
+  letter-spacing:.5px;
   font-weight:800;
   color:var(--white);
   text-shadow:
@@ -380,12 +377,16 @@ svg{display:block}
 
 .hero-subtitle{
   margin:12px 0 0;
+  font-family:"Poppins","Manrope",Arial,sans-serif;
+  font-weight:400;
   color:var(--muted);
   font-size:15px;
   max-width:520px;
 }
 
 .user-block{
+  position:relative;
+  z-index:2;
   display:flex;
   align-items:center;
   gap:12px;
@@ -687,7 +688,6 @@ svg{display:block}
   .app-footer{flex-direction:column;align-items:flex-start;padding:18px}
 
   .login-card{padding:28px 22px}
-  .company-logo{width:220px}
 }
 
 /* PASSWORD SETTINGS */
@@ -768,3 +768,4 @@ svg{display:block}
 #category-navigation{
   display:contents;
 }
+
