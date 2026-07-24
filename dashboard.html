@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <title>Kuwait Analytics Hub | Al Ansari Exchange</title>
-  <link rel="stylesheet" href="./style.css?v=26">
+  <link rel="stylesheet" href="./style.css?v=27">
 </head>
 
 <body>
@@ -17,44 +17,95 @@
   <div id="portal" class="app-shell hidden">
     <aside class="sidebar">
       <div class="brand">
-        <div class="brand-name">Al Ansari Exchange</div>
+        <img class="sidebar-logo" src="./logo.jpg" alt="Al Ansari Exchange">
         <div class="brand-subtitle">Kuwait</div>
       </div>
 
       <nav class="sidebar-nav" aria-label="Portal navigation">
         <button class="nav-item category-nav active" type="button" data-category="All">
-          <span>▦</span>
+          <span class="nav-icon" data-icon="all"></span>
           <b>All Dashboards</b>
         </button>
 
         <div id="category-navigation"></div>
 
+        <div class="sidebar-divider"></div>
+
         <button class="password-nav-item" id="change-password-nav" type="button">
-          <span>🔐</span>
+          <span class="nav-icon" data-icon="lock"></span>
           <b>Change Password</b>
         </button>
       </nav>
 
       <div class="sidebar-footer">
         <button id="logout-button" class="logout-link" type="button">
-          <span>↪</span>
+          <span class="nav-icon" data-icon="signout"></span>
           <b>Sign Out</b>
         </button>
       </div>
     </aside>
 
     <main class="main-content">
-      <header class="topbar">
-        <div>
-          <h1>Kuwait Analytics Hub</h1>
-          <p>Real-Time Insights. Smarter Decisions.</p>
+      <header class="hero">
+        <div class="hero-bg" aria-hidden="true"></div>
+        <div class="hero-top">
+          <div class="hero-copy">
+            <p class="hero-eyebrow">REAL-TIME INSIGHTS &nbsp;•&nbsp; SMARTER DECISIONS</p>
+            <h1>KUWAIT ANALYTICS HUB</h1>
+            <p class="hero-subtitle">Your single window to performance, analytics and business intelligence.</p>
+          </div>
+
+          <div class="user-block">
+            <div class="avatar" id="avatar">U</div>
+            <div class="user-text">
+              <strong id="user-name">User</strong>
+              <span id="user-role">Authorised User</span>
+            </div>
+            <span class="chevron">⌄</span>
+          </div>
         </div>
 
-        <div class="user-block">
-          <div class="avatar" id="avatar">U</div>
-          <div>
-            <strong id="user-name">User</strong>
-            <span id="user-role">Authorised User</span>
+        <div class="stat-row" id="stat-row">
+          <div class="stat-card">
+            <span class="stat-icon" data-icon="grid"></span>
+            <div>
+              <strong id="stat-dashboards">0</strong>
+              <span>Dashboards Available</span>
+            </div>
+          </div>
+
+          <div class="stat-card">
+            <span class="stat-icon" data-icon="layers"></span>
+            <div>
+              <strong id="stat-categories">0</strong>
+              <span>Categories Available</span>
+            </div>
+          </div>
+
+          <div class="stat-card">
+            <span class="stat-icon" data-icon="calendar"></span>
+            <div>
+              <span class="stat-label">Last Updated</span>
+              <strong id="stat-updated">—</strong>
+            </div>
+          </div>
+
+          <div class="stat-card">
+            <span class="stat-icon" data-icon="refresh"></span>
+            <div>
+              <span class="stat-label">Data Refresh</span>
+              <strong>Every 30 Min</strong>
+              <span class="live-dot"><i></i>Live</span>
+            </div>
+          </div>
+
+          <div class="stat-card">
+            <span class="stat-icon" data-icon="user"></span>
+            <div>
+              <span class="stat-label">Welcome back,</span>
+              <strong id="stat-welcome">there!</strong>
+              <span class="stat-note">Have a productive day.</span>
+            </div>
           </div>
         </div>
       </header>
@@ -67,26 +118,17 @@
           </div>
 
           <label class="search-wrap">
-            <span>⌕</span>
+            <span class="nav-icon" data-icon="search"></span>
             <input
               id="dashboard-search"
               type="search"
-              placeholder="Search dashboards"
+              placeholder="Search dashboards..."
               autocomplete="off"
             >
           </label>
         </div>
 
-        <div class="table-card">
-          <div class="table-head">
-            <div>Dashboard</div>
-            <div>Category</div>
-            <div>Description</div>
-            <div>Action</div>
-          </div>
-
-          <div id="dashboard-list"></div>
-        </div>
+        <div id="dashboard-list" class="dashboard-grid"></div>
 
         <p id="portal-message" class="portal-message"></p>
       </section>
@@ -141,9 +183,17 @@
           </form>
         </div>
       </section>
+
+      <footer class="app-footer">
+        <span>© 2026 Al Ansari Exchange. All Rights Reserved.</span>
+        <span class="classification">Classification: Internal Use Only</span>
+        <span class="footer-links">
+          <a href="#">Terms of Use</a> | <a href="#">Privacy Policy</a> | <a href="#">Support</a>
+        </span>
+      </footer>
     </main>
   </div>
 
-  <script type="module" src="./dashboard.js?v=26"></script>
+  <script type="module" src="./dashboard.js?v=27"></script>
 </body>
 </html>
