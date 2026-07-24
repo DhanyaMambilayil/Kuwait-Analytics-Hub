@@ -58,7 +58,7 @@ export const DASHBOARDS = [
     permissionKey: "becWinBack",
     title: "BEC Win-Back",
     description: "Inactive-customer reactivation and win-back performance.",
-    category: "Customers",
+    category: "Contests",
     icon: "BW",
     url: "https://dhanyamambilayil.github.io/BEC-Win-Back-Dashboard/",
     active: true
@@ -68,7 +68,7 @@ export const DASHBOARDS = [
     permissionKey: "aaeWinBack",
     title: "AAE Win-Back",
     description: "AAE customer reactivation and win-back performance.",
-    category: "Customers",
+    category: "Contests",
     icon: "AW",
     url: "https://dhanyamambilayil.github.io/AAE-Win-Back-Dashboard/",
     active: true
