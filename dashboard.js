@@ -14,7 +14,52 @@ import {
   getDoc
 } from "https://www.gstatic.com/firebasejs/12.1.0/firebase-firestore.js";
 
+const ICONS = {
+  all: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg>',
+  retail: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="14" rx="2"/><circle cx="8.5" cy="10" r="1.8"/><path d="M21 14l-5.5-4.5L11 14"/></svg>',
+  wholesale: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 3l4 4-4 4"/><path d="M17 21l-4-4 4-4"/><path d="M3 7h10"/><path d="M11 17h10"/></svg>',
+  corporate: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="3" width="9" height="18"/><rect x="13" y="8" width="7" height="13"/><path d="M7.5 7h2M7.5 11h2M7.5 15h2"/></svg>',
+  customer: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3.2"/><path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6"/><circle cx="17.5" cy="8.5" r="2.4"/><path d="M15.5 14.2c2.6.4 4.5 2.7 4.5 5.3"/></svg>',
+  market: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.5 3.8 5.7 3.8 9s-1.3 6.5-3.8 9c-2.5-2.5-3.8-5.7-3.8-9S9.5 5.5 12 3z"/></svg>',
+  contests: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2.5 14.8 8.6 21.5 9.3 16.5 13.8 18 20.5 12 17 6 20.5 7.5 13.8 2.5 9.3 9.2 8.6"/></svg>',
+  lock: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="11" width="16" height="9" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg>',
+  signout: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><path d="M16 17l5-5-5-5"/><path d="M21 12H9"/></svg>',
+  search: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg>',
+  grid: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg>',
+  layers: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 21 7.5 12 13 3 7.5"/><path d="M3 12.5l9 5.5 9-5.5"/><path d="M3 17.5l9 5.5 9-5.5"/></svg>',
+  calendar: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M8 3v4M16 3v4M3 10h18"/></svg>',
+  refresh: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a9 9 0 1 1-3-6.7"/><path d="M21 3v6h-6"/></svg>',
+  user: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4.4 3.6-8 8-8s8 3.6 8 8"/></svg>'
+};
+
+const CATEGORY_STYLES = {
+  "retail": { icon: "retail", tone: "" },
+  "wholesale": { icon: "wholesale", tone: "" },
+  "corporate": { icon: "corporate", tone: "gold" },
+  "customer analytics": { icon: "customer", tone: "teal" },
+  "market intelligence": { icon: "market", tone: "teal" },
+  "contests": { icon: "contests", tone: "purple" }
+};
+
+function getCategoryStyle(category) {
+  const key = String(category || "").trim().toLowerCase();
+  return CATEGORY_STYLES[key] || { icon: "grid", tone: "" };
+}
+
+function paintIcon(el) {
+  const key = el.dataset.icon;
+  if (key && ICONS[key]) {
+    el.innerHTML = ICONS[key];
+  }
+}
+
+function paintAllIcons(root = document) {
+  root.querySelectorAll("[data-icon]").forEach(paintIcon);
+}
+
 window.addEventListener("DOMContentLoaded", () => {
+  paintAllIcons();
+
   const loadingScreen = document.getElementById("loading-screen");
   const portal = document.getElementById("portal");
   const logoutButton = document.getElementById("logout-button");
@@ -31,6 +76,10 @@ window.addEventListener("DOMContentLoaded", () => {
   const avatar = document.getElementById("avatar");
   const sectionTitle = document.getElementById("section-title");
   const categoryNavigation = document.getElementById("category-navigation");
+  const statDashboards = document.getElementById("stat-dashboards");
+  const statCategories = document.getElementById("stat-categories");
+  const statUpdated = document.getElementById("stat-updated");
+  const statWelcome = document.getElementById("stat-welcome");
 
   const changePasswordForm = document.getElementById("change-password-form");
   const currentPasswordInput = document.getElementById("current-password");
@@ -78,6 +127,10 @@ window.addEventListener("DOMContentLoaded", () => {
     avatar,
     sectionTitle,
     categoryNavigation,
+    statDashboards,
+    statCategories,
+    statUpdated,
+    statWelcome,
     changePasswordForm,
     currentPasswordInput,
     newPasswordInput,
@@ -151,35 +204,35 @@ window.addEventListener("DOMContentLoaded", () => {
       .toUpperCase();
   }
 
-  function createRow(item) {
-    const row = document.createElement("div");
-    row.className = "dashboard-row";
+  function createCard(item) {
+    const card = document.createElement("div");
+    card.className = "dashboard-card";
 
-    row.innerHTML = `
-      <div class="dashboard-name-cell">
-        <div class="dashboard-icon">${getDashboardCode(item)}</div>
-        <strong>${item.title}</strong>
-      </div>
+    const style = getCategoryStyle(item.category);
+    const toneAttr = style.tone ? ` data-tone="${style.tone}"` : "";
 
-      <div>
-        <span class="category-pill">${item.category}</span>
-      </div>
+    card.innerHTML = `
+      <div class="dashboard-icon">${getDashboardCode(item)}</div>
 
-      <div class="dashboard-description">
-        ${item.description}
-      </div>
+      <span class="category-pill"${toneAttr}>${item.category}</span>
 
-      <div>
-        <a class="view-button"
-           href="${item.url}"
-           target="_blank"
-           rel="noopener noreferrer">
-          View Dashboard <span>›</span>
-        </a>
-      </div>
+      <strong class="dashboard-title">${item.title}</strong>
+
+      <p class="dashboard-description">${item.description}</p>
+
+      <a class="view-button"
+         href="${item.url}"
+         target="_blank"
+         rel="noopener noreferrer">
+        View Dashboard <span>→</span>
+      </a>
+
+      <div class="dashboard-decor" data-icon="${style.icon}"></div>
     `;
 
-    return row;
+    paintAllIcons(card);
+
+    return card;
   }
 
   function getCategoryNavItems() {
@@ -218,7 +271,9 @@ window.addEventListener("DOMContentLoaded", () => {
       button.dataset.category = category;
 
       const icon = document.createElement("span");
-      icon.textContent = "▦";
+      icon.className = "nav-icon";
+      icon.dataset.icon = getCategoryStyle(category).icon;
+      paintIcon(icon);
 
       const label = document.createElement("b");
       label.textContent = category;
@@ -261,7 +316,26 @@ window.addEventListener("DOMContentLoaded", () => {
     }
 
     portalMessage.textContent = "";
-    filtered.forEach(item => dashboardList.appendChild(createRow(item)));
+    filtered.forEach(item => dashboardList.appendChild(createCard(item)));
+  }
+
+  function renderStats(displayName) {
+    const categoryCount = new Set(
+      visibleDashboards.map(item => String(item.category || "").trim()).filter(Boolean)
+    ).size;
+
+    statDashboards.textContent = String(visibleDashboards.length);
+    statCategories.textContent = String(categoryCount);
+
+    const now = new Date();
+    statUpdated.textContent = now.toLocaleDateString("en-GB", {
+      day: "2-digit",
+      month: "short",
+      year: "numeric"
+    });
+
+    const firstName = String(displayName || "there").split(" ")[0];
+    statWelcome.textContent = `${firstName}!`;
   }
 
   function showDashboardSection() {
@@ -394,6 +468,7 @@ window.addEventListener("DOMContentLoaded", () => {
         permissions.admin === true ? "Administrator" : "Authorised User";
       avatar.textContent = getInitials(displayName);
 
+      renderStats(displayName);
       renderDashboards();
 
       loadingScreen.classList.add("hidden");
