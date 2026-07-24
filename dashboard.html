@@ -3,13 +3,15 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Kuwait Analytics Hub</title>
-  <link rel="stylesheet" href="style.css?v=9">
+
+  <title>Kuwait Analytics Hub | Al Ansari Exchange</title>
+  <link rel="stylesheet" href="./style.css?v=11">
 </head>
-<body class="app-body">
+
+<body>
   <div id="loading-screen" class="loading-screen">
     <div class="spinner"></div>
-    <p>Loading your dashboards...</p>
+    <p>Loading your access...</p>
   </div>
 
   <div id="portal" class="app-shell hidden">
@@ -19,17 +21,38 @@
         <div class="brand-subtitle">Kuwait Analytics Hub</div>
       </div>
 
-      <nav class="sidebar-nav">
-        <button class="nav-item active" data-category="All" type="button"><span>⌂</span><b>Overview</b></button>
-        <button class="nav-item" data-category="Retail" type="button"><span>▣</span><b>Retail</b></button>
-        <button class="nav-item" data-category="Wholesale" type="button"><span>⇄</span><b>Wholesale</b></button>
-        <button class="nav-item" data-category="Corporate" type="button"><span>▥</span><b>Corporate</b></button>
-        <button class="nav-item" data-category="Customers" type="button"><span>♙</span><b>Customer</b></button>
-        <button class="nav-item" data-category="Strategy" type="button"><span>◎</span><b>Strategy</b></button>
+      <nav class="sidebar-nav" aria-label="Portal navigation">
+        <button class="nav-item category-nav active" type="button" data-category="All">
+          <span>▦</span>
+          <b>All Dashboards</b>
+        </button>
+
+        <button class="nav-item category-nav" type="button" data-category="Retail">
+          <span>◫</span>
+          <b>Retail</b>
+        </button>
+
+        <button class="nav-item category-nav" type="button" data-category="Wholesale">
+          <span>◆</span>
+          <b>Wholesale</b>
+        </button>
+
+        <button class="nav-item category-nav" type="button" data-category="Corporate">
+          <span>▣</span>
+          <b>Corporate</b>
+        </button>
+
+        <button class="nav-item" id="change-password-nav" type="button">
+          <span>🔐</span>
+          <b>Change Password</b>
+        </button>
       </nav>
 
       <div class="sidebar-footer">
-        <button id="logout-button" class="logout-link" type="button"><span>↪</span><b>Logout</b></button>
+        <button id="logout-button" class="logout-link" type="button">
+          <span>↪</span>
+          <b>Sign Out</b>
+        </button>
       </div>
     </aside>
 
@@ -37,11 +60,11 @@
       <header class="topbar">
         <div>
           <h1>Kuwait Analytics Hub</h1>
-          <p>Real-time insights. Smarter decisions.</p>
+          <p>Secure access to your assigned business dashboards.</p>
         </div>
 
         <div class="user-block">
-          <div id="avatar" class="avatar">U</div>
+          <div class="avatar" id="avatar">U</div>
           <div>
             <strong id="user-name">User</strong>
             <span id="user-role">Authorised User</span>
@@ -49,34 +72,91 @@
         </div>
       </header>
 
-      <section class="content">
+      <section id="dashboard-section" class="content content-section">
         <div class="page-heading">
           <div>
             <h2 id="section-title">All Dashboards</h2>
-            <p>Explore and access business dashboards across AAE Kuwait.</p>
+            <p>Select a dashboard to open it in a new tab.</p>
           </div>
 
-          <div class="search-wrap">
+          <label class="search-wrap">
             <span>⌕</span>
-            <input id="dashboard-search" type="search" placeholder="Search dashboards..." aria-label="Search dashboards">
-          </div>
+            <input
+              id="dashboard-search"
+              type="search"
+              placeholder="Search dashboards"
+              autocomplete="off"
+            >
+          </label>
         </div>
 
         <div class="table-card">
           <div class="table-head">
-            <div>Dashboard Name</div>
+            <div>Dashboard</div>
             <div>Category</div>
             <div>Description</div>
             <div>Action</div>
           </div>
+
           <div id="dashboard-list"></div>
         </div>
 
         <p id="portal-message" class="portal-message"></p>
       </section>
+
+      <section id="password-section" class="content content-section hidden">
+        <div class="page-heading">
+          <div>
+            <h2>Change Password</h2>
+            <p>Update the password used to access the Analytics Hub.</p>
+          </div>
+        </div>
+
+        <div class="settings-card">
+          <h3>Security settings</h3>
+          <p class="settings-note">
+            Enter your current password before choosing a new one.
+          </p>
+
+          <form id="change-password-form">
+            <label for="current-password">Current password</label>
+            <input
+              id="current-password"
+              type="password"
+              autocomplete="current-password"
+              required
+            >
+
+            <label for="new-password">New password</label>
+            <input
+              id="new-password"
+              type="password"
+              minlength="8"
+              autocomplete="new-password"
+              required
+            >
+            <p class="password-requirements">Use at least 8 characters.</p>
+
+            <label for="confirm-password">Confirm new password</label>
+            <input
+              id="confirm-password"
+              type="password"
+              minlength="8"
+              autocomplete="new-password"
+              required
+            >
+
+            <button id="change-password-button" class="primary-button" type="submit">
+              Change Password
+            </button>
+
+            <p id="password-message" class="form-message" role="status"></p>
+          </form>
+        </div>
+      </section>
     </main>
   </div>
 
-  <script type="module" src="dashboard.js?v=8"></script>
+  <script type="module" src="./dashboard.js?v=11"></script>
 </body>
 </html>
