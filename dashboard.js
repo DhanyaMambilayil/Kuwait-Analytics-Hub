@@ -1,5 +1,5 @@
 import { auth, db } from "./firebase-config.js";
-import { DASHBOARDS } from "./dashboards.js";
+import { DASHBOARDS } from "./dashboards.js?v=25";
 
 import {
   EmailAuthProvider,
@@ -30,7 +30,7 @@ window.addEventListener("DOMContentLoaded", () => {
   const userRole = document.getElementById("user-role");
   const avatar = document.getElementById("avatar");
   const sectionTitle = document.getElementById("section-title");
-  const categoryNavItems = [...document.querySelectorAll(".category-nav")];
+  const categoryNavigation = document.getElementById("category-navigation");
 
   const changePasswordForm = document.getElementById("change-password-form");
   const currentPasswordInput = document.getElementById("current-password");
@@ -77,6 +77,7 @@ window.addEventListener("DOMContentLoaded", () => {
     userRole,
     avatar,
     sectionTitle,
+    categoryNavigation,
     changePasswordForm,
     currentPasswordInput,
     newPasswordInput,
@@ -181,6 +182,61 @@ window.addEventListener("DOMContentLoaded", () => {
     return row;
   }
 
+  function getCategoryNavItems() {
+    return [...document.querySelectorAll(".category-nav")];
+  }
+
+  function selectCategory(category, selectedButton) {
+    showDashboardSection();
+
+    getCategoryNavItems().forEach(item => item.classList.remove("active"));
+    selectedButton.classList.add("active");
+
+    activeCategory = category || "All";
+    sectionTitle.textContent =
+      activeCategory === "All"
+        ? "All Dashboards"
+        : `${activeCategory} Dashboards`;
+
+    dashboardSearch.value = "";
+    renderDashboards();
+  }
+
+  function renderCategoryNavigation() {
+    const categories = [...new Set(
+      visibleDashboards
+        .map(item => String(item.category || "").trim())
+        .filter(Boolean)
+    )];
+
+    categoryNavigation.innerHTML = "";
+
+    categories.forEach(category => {
+      const button = document.createElement("button");
+      button.className = "nav-item category-nav";
+      button.type = "button";
+      button.dataset.category = category;
+
+      const icon = document.createElement("span");
+      icon.textContent = "▦";
+
+      const label = document.createElement("b");
+      label.textContent = category;
+
+      button.append(icon, label);
+      button.addEventListener("click", () => selectCategory(category, button));
+      categoryNavigation.appendChild(button);
+    });
+
+    const allButton = document.querySelector(
+      '.category-nav[data-category="All"]'
+    );
+
+    if (allButton) {
+      allButton.onclick = () => selectCategory("All", allButton);
+    }
+  }
+
   function renderDashboards() {
     const query = dashboardSearch.value.trim().toLowerCase();
 
@@ -218,7 +274,7 @@ window.addEventListener("DOMContentLoaded", () => {
     dashboardSection.classList.add("hidden");
     passwordSection.classList.remove("hidden");
 
-    categoryNavItems.forEach(item => item.classList.remove("active"));
+    getCategoryNavItems().forEach(item => item.classList.remove("active"));
     changePasswordNav.classList.add("active");
 
     passwordMessage.textContent = "";
@@ -233,7 +289,7 @@ window.addEventListener("DOMContentLoaded", () => {
     button.addEventListener("click", () => {
       showDashboardSection();
 
-      categoryNavItems.forEach(item => item.classList.remove("active"));
+      getCategoryNavItems().forEach(item => item.classList.remove("active"));
       button.classList.add("active");
 
       activeCategory = button.dataset.category || "All";
@@ -346,6 +402,7 @@ window.addEventListener("DOMContentLoaded", () => {
 
       const permissions = userDocument.data();
       visibleDashboards = getAllowedDashboards(permissions);
+      renderCategoryNavigation();
 
       const displayName = permissions.name || user.email || "User";
 
