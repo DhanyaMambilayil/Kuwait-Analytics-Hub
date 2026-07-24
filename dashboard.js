@@ -76,10 +76,6 @@ window.addEventListener("DOMContentLoaded", () => {
   const avatar = document.getElementById("avatar");
   const sectionTitle = document.getElementById("section-title");
   const categoryNavigation = document.getElementById("category-navigation");
-  const statDashboards = document.getElementById("stat-dashboards");
-  const statCategories = document.getElementById("stat-categories");
-  const statUpdated = document.getElementById("stat-updated");
-  const statWelcome = document.getElementById("stat-welcome");
 
   const changePasswordForm = document.getElementById("change-password-form");
   const currentPasswordInput = document.getElementById("current-password");
@@ -127,10 +123,6 @@ window.addEventListener("DOMContentLoaded", () => {
     avatar,
     sectionTitle,
     categoryNavigation,
-    statDashboards,
-    statCategories,
-    statUpdated,
-    statWelcome,
     changePasswordForm,
     currentPasswordInput,
     newPasswordInput,
@@ -319,25 +311,6 @@ window.addEventListener("DOMContentLoaded", () => {
     filtered.forEach(item => dashboardList.appendChild(createCard(item)));
   }
 
-  function renderStats(displayName) {
-    const categoryCount = new Set(
-      visibleDashboards.map(item => String(item.category || "").trim()).filter(Boolean)
-    ).size;
-
-    statDashboards.textContent = String(visibleDashboards.length);
-    statCategories.textContent = String(categoryCount);
-
-    const now = new Date();
-    statUpdated.textContent = now.toLocaleDateString("en-GB", {
-      day: "2-digit",
-      month: "short",
-      year: "numeric"
-    });
-
-    const firstName = String(displayName || "there").split(" ")[0];
-    statWelcome.textContent = `${firstName}!`;
-  }
-
   function showDashboardSection() {
     passwordSection.classList.add("hidden");
     dashboardSection.classList.remove("hidden");
@@ -468,7 +441,6 @@ window.addEventListener("DOMContentLoaded", () => {
         permissions.admin === true ? "Administrator" : "Authorised User";
       avatar.textContent = getInitials(displayName);
 
-      renderStats(displayName);
       renderDashboards();
 
       loadingScreen.classList.add("hidden");
