@@ -753,3 +753,61 @@ button,input{font:inherit}
     text-align:center!important;
   }
 }
+
+
+/* LETTER ICON AND BRAND FIX — v21 */
+.sidebar .brand .brand-name{
+  font-size:30px!important;
+  font-weight:800!important;
+  line-height:1.1!important;
+  letter-spacing:-.5px!important;
+}
+
+.sidebar .brand .brand-subtitle{
+  font-size:14px!important;
+  font-weight:600!important;
+  margin-top:8px!important;
+}
+
+/* Sidebar category letters */
+.category-nav span:first-child{
+  width:28px!important;
+  height:28px!important;
+  display:grid!important;
+  place-items:center!important;
+  border-radius:7px!important;
+  background:rgba(255,255,255,.14)!important;
+  color:#fff!important;
+  font-size:14px!important;
+  font-weight:800!important;
+  line-height:1!important;
+}
+
+.category-nav.active span:first-child,
+.category-nav:hover span:first-child{
+  background:var(--navy2)!important;
+  color:#fff!important;
+}
+
+/* Keep All Dashboards grid icon unchanged */
+.category-nav[data-category="All"] span:first-child{
+  background:transparent!important;
+  font-size:20px!important;
+}
+
+/* Remove icon space from Change Password */
+.password-nav-item span:first-child{
+  display:none!important;
+}
+
+.password-nav-item{
+  padding-left:16px!important;
+}
+
+/* Dashboard rows use letter abbreviations again */
+.dashboard-icon{
+  font-family:'Manrope',Arial,sans-serif!important;
+  font-size:16px!important;
+  line-height:1!important;
+  font-weight:800!important;
+}
