@@ -116,13 +116,47 @@ window.addEventListener("DOMContentLoaded", () => {
     });
   }
 
+
+  function getDashboardCode(item) {
+    const title = String(item.title || "").trim().toLowerCase();
+
+    const exactCodes = {
+      "retail performance": "R",
+      "wholesale": "W",
+      "corporate desk": "C",
+      "customer base": "CB",
+      "competitive presence": "CP",
+      "bec win-back": "BEC",
+      "aae win-back": "AAE"
+    };
+
+    if (exactCodes[title]) {
+      return exactCodes[title];
+    }
+
+    const words = String(item.title || "Dashboard")
+      .replace(/[^a-zA-Z0-9 ]/g, " ")
+      .split(/\s+/)
+      .filter(Boolean);
+
+    if (words.length === 1) {
+      return words[0].slice(0, 2).toUpperCase();
+    }
+
+    return words
+      .slice(0, 2)
+      .map(word => word[0])
+      .join("")
+      .toUpperCase();
+  }
+
   function createRow(item) {
     const row = document.createElement("div");
     row.className = "dashboard-row";
 
     row.innerHTML = `
       <div class="dashboard-name-cell">
-        <div class="dashboard-icon">${item.icon || "D"}</div>
+        <div class="dashboard-icon">${getDashboardCode(item)}</div>
         <strong>${item.title}</strong>
       </div>
 
