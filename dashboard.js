@@ -1,5 +1,5 @@
 import { auth, db } from "./firebase-config.js";
-import { DASHBOARDS } from "./dashboards.js?v=25";
+import { DASHBOARDS } from "./dashboards.js?v=26";
 
 import {
   EmailAuthProvider,
@@ -284,23 +284,6 @@ window.addEventListener("DOMContentLoaded", () => {
   }
 
   dashboardSearch.addEventListener("input", renderDashboards);
-
-  categoryNavItems.forEach(button => {
-    button.addEventListener("click", () => {
-      showDashboardSection();
-
-      getCategoryNavItems().forEach(item => item.classList.remove("active"));
-      button.classList.add("active");
-
-      activeCategory = button.dataset.category || "All";
-      sectionTitle.textContent =
-        activeCategory === "All"
-          ? "All Dashboards"
-          : `${activeCategory} Dashboards`;
-
-      renderDashboards();
-    });
-  });
 
   changePasswordNav.addEventListener("click", showPasswordSection);
 
