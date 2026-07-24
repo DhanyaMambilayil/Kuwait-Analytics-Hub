@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Kuwait Analytics Hub</title>
-  <link rel="stylesheet" href="style.css?v=2">
+  <link rel="stylesheet" href="style.css?v=7">
 </head>
 <body class="app-body">
   <div id="loading-screen" class="loading-screen">
@@ -15,25 +15,21 @@
   <div id="portal" class="app-shell hidden">
     <aside class="sidebar">
       <div class="brand">
-        <div class="brand-symbol">◉</div>
-        <div>
-          <div class="brand-arabic">الأنصاري للصرافة</div>
-          <div class="brand-name">AL ANSARI EXCHANGE</div>
-        </div>
+        <div class="brand-name">AL ANSARI EXCHANGE</div>
+        <div class="brand-subtitle">KUWAIT ANALYTICS</div>
       </div>
 
       <nav class="sidebar-nav">
-        <button class="nav-item active" data-category="All"><span class="nav-icon">⌂</span><span>Overview</span></button>
-        <button class="nav-item" data-category="Retail"><span class="nav-icon">▣</span><span>Retail</span></button>
-        <button class="nav-item" data-category="Wholesale"><span class="nav-icon">⇄</span><span>Wholesale</span></button>
-        <button class="nav-item" data-category="Corporate"><span class="nav-icon">▥</span><span>Corporate</span></button>
-        <button class="nav-item" data-category="Customers"><span class="nav-icon">♙</span><span>Customer</span></button>
-        <button class="nav-item" data-category="Operations"><span class="nav-icon">⚙</span><span>Operations</span></button>
-        <button class="nav-item" data-category="Governance"><span class="nav-icon">◇</span><span>Governance</span></button>
+        <button class="nav-item active" data-category="All" type="button"><span>⌂</span><b>Overview</b></button>
+        <button class="nav-item" data-category="Retail" type="button"><span>▣</span><b>Retail</b></button>
+        <button class="nav-item" data-category="Wholesale" type="button"><span>⇄</span><b>Wholesale</b></button>
+        <button class="nav-item" data-category="Corporate" type="button"><span>▥</span><b>Corporate</b></button>
+        <button class="nav-item" data-category="Customers" type="button"><span>♙</span><b>Customer</b></button>
+        <button class="nav-item" data-category="Strategy" type="button"><span>◎</span><b>Strategy</b></button>
       </nav>
 
       <div class="sidebar-footer">
-        <button id="logout-button" class="logout-link" type="button"><span>↪</span><span>Logout</span></button>
+        <button id="logout-button" class="logout-link" type="button"><span>↪</span><b>Logout</b></button>
       </div>
     </aside>
 
@@ -43,9 +39,13 @@
           <h1>Kuwait Analytics Hub</h1>
           <p>Real-time insights. Smarter decisions.</p>
         </div>
+
         <div class="user-block">
-          <div class="avatar" id="avatar">DU</div>
-          <div><strong id="user-name">User</strong><span id="user-role">Authorised User</span></div>
+          <div id="avatar" class="avatar">U</div>
+          <div>
+            <strong id="user-name">User</strong>
+            <span id="user-role">Authorised User</span>
+          </div>
         </div>
       </header>
 
@@ -55,20 +55,28 @@
             <h2 id="section-title">All Dashboards</h2>
             <p>Explore and access business dashboards across AAE Kuwait.</p>
           </div>
-          <div class="search-wrap"><span>⌕</span><input id="dashboard-search" type="search" placeholder="Search dashboards..."></div>
+
+          <div class="search-wrap">
+            <span>⌕</span>
+            <input id="dashboard-search" type="search" placeholder="Search dashboards..." aria-label="Search dashboards">
+          </div>
         </div>
 
         <div class="table-card">
-          <div class="table-head"><div>Dashboard Name</div><div>Category</div><div>Description</div><div>Action</div></div>
-          <div id="dashboard-list" class="dashboard-list"></div>
+          <div class="table-head">
+            <div>Dashboard Name</div>
+            <div>Category</div>
+            <div>Description</div>
+            <div>Action</div>
+          </div>
+          <div id="dashboard-list"></div>
         </div>
 
         <p id="portal-message" class="portal-message"></p>
-        <footer class="portal-footer"><span>One Group</span><b>•</b><span>One Ambition</span><b>•</b><span>One Future</span></footer>
       </section>
     </main>
   </div>
 
-  <script type="module" src="./dashboard.js?v=4"></script>
+  <script type="module" src="dashboard.js?v=7"></script>
 </body>
 </html>
