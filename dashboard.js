@@ -122,7 +122,7 @@ window.addEventListener("DOMContentLoaded", () => {
 
     row.innerHTML = `
       <div class="dashboard-name-cell">
-        <div class="dashboard-icon">${item.icon || "D"}</div>
+        <div class="dashboard-icon">📊</div>
         <strong>${item.title}</strong>
       </div>
 
@@ -332,4 +332,3 @@ window.addEventListener("DOMContentLoaded", () => {
     }
   });
 });
-
