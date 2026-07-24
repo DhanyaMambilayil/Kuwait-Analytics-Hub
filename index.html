@@ -4,13 +4,16 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Kuwait Analytics Hub</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css?v=7">
 </head>
 <body class="login-page">
   <main class="login-card">
-    <div class="brand-mark">KA</div>
-    <p class="eyebrow">INTERNAL ANALYTICS</p>
-    <h1>Kuwait Analytics Hub</h1>
+    <div class="login-brand">
+      <div class="login-brand-text">AL ANSARI EXCHANGE</div>
+      <p class="eyebrow">INTERNAL ANALYTICS</p>
+      <h1>Kuwait Analytics Hub</h1>
+    </div>
+
     <p class="subtitle">Sign in to access your authorised dashboards.</p>
 
     <label for="email">Email address</label>
@@ -19,13 +22,14 @@
     <label for="password">Password</label>
     <div class="password-wrap">
       <input id="password" type="password" placeholder="Enter your password" autocomplete="current-password">
-      <button id="toggle-password" class="text-button" type="button" aria-label="Show password">Show</button>
+      <button id="toggle-password" class="text-button" type="button">Show</button>
     </div>
 
     <button id="login-button" class="primary-button" type="button">Sign in</button>
     <p id="login-message" class="error-message" role="alert"></p>
   </main>
 
-  <script type="module" src="auth.js"></script>
+  <script type="module" src="auth.js?v=7"></script>
 </body>
 </html>
+
