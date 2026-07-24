@@ -122,7 +122,7 @@ window.addEventListener("DOMContentLoaded", () => {
 
     row.innerHTML = `
       <div class="dashboard-name-cell">
-        <div class="dashboard-icon">📊</div>
+        <div class="dashboard-icon" aria-hidden="true">📊</div>
         <strong>${item.title}</strong>
       </div>
 
