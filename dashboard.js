@@ -76,6 +76,7 @@ window.addEventListener("DOMContentLoaded", () => {
   const avatar = document.getElementById("avatar");
   const sectionTitle = document.getElementById("section-title");
   const categoryNavigation = document.getElementById("category-navigation");
+  const welcomeName = document.getElementById("welcome-name");
 
   const changePasswordForm = document.getElementById("change-password-form");
   const currentPasswordInput = document.getElementById("current-password");
@@ -123,6 +124,7 @@ window.addEventListener("DOMContentLoaded", () => {
     avatar,
     sectionTitle,
     categoryNavigation,
+    welcomeName,
     changePasswordForm,
     currentPasswordInput,
     newPasswordInput,
@@ -440,6 +442,7 @@ window.addEventListener("DOMContentLoaded", () => {
       userRole.textContent =
         permissions.admin === true ? "Administrator" : "Authorised User";
       avatar.textContent = getInitials(displayName);
+      welcomeName.textContent = String(displayName).split(" ")[0];
 
       renderDashboards();
 
