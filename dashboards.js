@@ -38,7 +38,7 @@ export const DASHBOARDS = [
     permissionKey: "customerBase",
     title: "Customer Base",
     description: "Unique customer, New customer trends.",
-    category: "Customers",
+    category: "Customer Analytics",
     icon: "CB",
     url: "https://dhanyamambilayil.github.io/Customer-base-Dashboard/",
     active: true
@@ -48,7 +48,7 @@ export const DASHBOARDS = [
     permissionKey: "competitivePresence",
     title: "Competitive Presence",
     description: "Market presence and competitive heatmap analysis.",
-    category: "Strategy",
+    category: "Market Intelligence",
     icon: "CP",
     url: "https://dhanyamambilayil.github.io/Competitive-Presence-Heatmap/",
     active: true
