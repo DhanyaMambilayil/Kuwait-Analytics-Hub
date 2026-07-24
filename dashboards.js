@@ -57,7 +57,7 @@ export const DASHBOARDS = [
     id: "bec-win-back",
     permissionKey: "becWinBack",
     title: "BEC Win-Back",
-    description: "BEC May Contests.",
+    description: "BEC May Contest.",
     category: "Contests",
     icon: "BW",
     url: "https://dhanyamambilayil.github.io/BEC-Win-Back-Dashboard/",
