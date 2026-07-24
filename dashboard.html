@@ -17,7 +17,25 @@
   <div id="portal" class="app-shell hidden">
     <aside class="sidebar">
       <div class="brand">
-        <img class="sidebar-logo" src="./logo.jpg" alt="Al Ansari Exchange">
+        <div class="brand-mark">
+          <span class="brand-icon" aria-hidden="true">
+            <svg viewBox="0 0 40 40" fill="none">
+              <circle cx="20" cy="20" r="17" stroke="url(#goldRing)" stroke-width="2.4"/>
+              <circle cx="20" cy="20" r="10.5" stroke="url(#goldRing)" stroke-width="1.6" opacity=".7"/>
+              <path d="M20 4c5 4 8 9.5 8 16s-3 12-8 16" stroke="url(#goldRing)" stroke-width="1.4" opacity=".55"/>
+              <defs>
+                <linearGradient id="goldRing" x1="2" y1="2" x2="38" y2="38" gradientUnits="userSpaceOnUse">
+                  <stop offset="0" stop-color="#f4bc3d"/>
+                  <stop offset="1" stop-color="#a9740f"/>
+                </linearGradient>
+              </defs>
+            </svg>
+          </span>
+          <span class="brand-wordmark">
+            <strong>AL ANSARI</strong>
+            <em>EXCHANGE</em>
+          </span>
+        </div>
         <div class="brand-subtitle">Kuwait</div>
       </div>
 
@@ -62,50 +80,6 @@
               <span id="user-role">Authorised User</span>
             </div>
             <span class="chevron">⌄</span>
-          </div>
-        </div>
-
-        <div class="stat-row" id="stat-row">
-          <div class="stat-card">
-            <span class="stat-icon" data-icon="grid"></span>
-            <div>
-              <strong id="stat-dashboards">0</strong>
-              <span>Dashboards Available</span>
-            </div>
-          </div>
-
-          <div class="stat-card">
-            <span class="stat-icon" data-icon="layers"></span>
-            <div>
-              <strong id="stat-categories">0</strong>
-              <span>Categories Available</span>
-            </div>
-          </div>
-
-          <div class="stat-card">
-            <span class="stat-icon" data-icon="calendar"></span>
-            <div>
-              <span class="stat-label">Last Updated</span>
-              <strong id="stat-updated">—</strong>
-            </div>
-          </div>
-
-          <div class="stat-card">
-            <span class="stat-icon" data-icon="refresh"></span>
-            <div>
-              <span class="stat-label">Data Refresh</span>
-              <strong>Every 30 Min</strong>
-              <span class="live-dot"><i></i>Live</span>
-            </div>
-          </div>
-
-          <div class="stat-card">
-            <span class="stat-icon" data-icon="user"></span>
-            <div>
-              <span class="stat-label">Welcome back,</span>
-              <strong id="stat-welcome">there!</strong>
-              <span class="stat-note">Have a productive day.</span>
-            </div>
           </div>
         </div>
       </header>
