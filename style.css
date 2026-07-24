@@ -689,3 +689,67 @@ button,input{font:inherit}
     text-align:center!important;
   }
 }
+
+
+/* FINAL BRAND AND ICON OVERRIDES — v20 */
+.sidebar .brand{
+  display:flex!important;
+  flex-direction:column!important;
+  align-items:flex-start!important;
+  justify-content:flex-start!important;
+  gap:0!important;
+  width:100%!important;
+  text-align:left!important;
+}
+
+.sidebar .brand .brand-name,
+.sidebar .brand .brand-subtitle{
+  display:block!important;
+  width:100%!important;
+  flex:none!important;
+  float:none!important;
+  position:static!important;
+  text-align:left!important;
+}
+
+.sidebar .brand .brand-name{
+  margin:0!important;
+  font-size:30px!important;
+  line-height:1.12!important;
+}
+
+.sidebar .brand .brand-subtitle{
+  margin:8px 0 0!important;
+}
+
+.dashboard-icon{
+  font-family:"Apple Color Emoji","Segoe UI Emoji","Noto Color Emoji",sans-serif!important;
+  font-size:24px!important;
+  line-height:1!important;
+  font-weight:400!important;
+}
+
+@media(max-width:1000px) and (min-width:721px){
+  .sidebar .brand{
+    align-items:center!important;
+    text-align:center!important;
+  }
+
+  .sidebar .brand .brand-name,
+  .sidebar .brand .brand-subtitle{
+    display:none!important;
+  }
+}
+
+@media(max-width:720px){
+  .sidebar .brand{
+    align-items:center!important;
+    text-align:center!important;
+  }
+
+  .sidebar .brand .brand-name,
+  .sidebar .brand .brand-subtitle{
+    display:block!important;
+    text-align:center!important;
+  }
+}
