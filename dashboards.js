@@ -60,7 +60,7 @@ export const DASHBOARDS = [
     category: "Corporate",
     icon: "C",
     url: "https://dhanyamambilayil.github.io/Al-Ansari-Corporate-Desk-Dashboard/",
-    status: "live",
+    status: "pending",
     active: true
   },
   {
@@ -71,7 +71,7 @@ export const DASHBOARDS = [
     category: "Customer Analytics",
     icon: "CB",
     url: "https://dhanyamambilayil.github.io/Customer-base-Dashboard/",
-    status: "live",
+    status: "pending",
     active: true
   },
   {
@@ -82,7 +82,7 @@ export const DASHBOARDS = [
     category: "Market Intelligence",
     icon: "CP",
     url: "https://dhanyamambilayil.github.io/Competitive-Presence-Heatmap/",
-    status: "live",
+    status: "wip",
     active: true
   },
   {
