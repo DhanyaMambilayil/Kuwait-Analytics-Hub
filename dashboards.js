@@ -16,7 +16,7 @@ export const DASHBOARDS = [
   {
     id: "wholesale",
     permissionKey: "wholesale",
-    title: "Wholesale",
+    title: "BEC Wholesale",
     description: "FX performance dashboard - Wholesale & Retail.",
     category: "Wholesale",
     icon: "W",
@@ -73,7 +73,16 @@ export const DASHBOARDS = [
     url: "https://dhanyamambilayil.github.io/AAE-Win-Back-Dashboard/",
     active: true
   }
-
+ {
+    id: "wholesale",
+    permissionKey: "wholesale",
+    title: "AAE Wholesale",
+    description: "FX performance dashboard - Wholesale & Retail.",
+    category: "Wholesale",
+    icon: "W",
+    url: "https://dhanyamambilayil.github.io/AAE-Wholesale-Dashboard/",
+    active: true
+  },
   // Add future dashboards by copying this example:
   // {
   //   id: "audit",
