@@ -1,5 +1,5 @@
 import { auth, db } from "./firebase-config.js";
-import { DASHBOARDS } from "./dashboards.js?v=26";
+import { DASHBOARDS } from "./dashboards.js?v=27";
 
 import {
   EmailAuthProvider,
