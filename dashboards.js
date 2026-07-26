@@ -9,6 +9,17 @@
 //   status: "pending" -> yellow "Update Pending" badge
 export const DASHBOARDS = [
   {
+    id: "kuwait-executive-scorecard",
+    permissionKey: "kuwaitExecutiveScorecard",
+    title: "Kuwait Executive Scorecard",
+    description: "Kuwait's business performance across all divisions.",
+    category: "Executive Overview",
+    icon: "KES",
+    url: "https://dhanyamambilayil.github.io/Kuwait-Executive-Scorecard/",
+    status: "wip",
+    active: true
+  },
+  {
     id: "retail",
     permissionKey: "retail",
     title: "Retail Performance",
@@ -49,7 +60,7 @@ export const DASHBOARDS = [
     category: "Corporate",
     icon: "C",
     url: "https://dhanyamambilayil.github.io/Al-Ansari-Corporate-Desk-Dashboard/",
-    status: "pending",
+    status: "live",
     active: true
   },
   {
@@ -60,7 +71,7 @@ export const DASHBOARDS = [
     category: "Customer Analytics",
     icon: "CB",
     url: "https://dhanyamambilayil.github.io/Customer-base-Dashboard/",
-    status: "wip",
+    status: "live",
     active: true
   },
   {
@@ -71,7 +82,7 @@ export const DASHBOARDS = [
     category: "Market Intelligence",
     icon: "CP",
     url: "https://dhanyamambilayil.github.io/Competitive-Presence-Heatmap/",
-    status: "wip",
+    status: "live",
     active: true
   },
   {
@@ -94,6 +105,17 @@ export const DASHBOARDS = [
     icon: "AW",
     url: "https://dhanyamambilayil.github.io/AAE-Win-Back-Dashboard/",
     status: "live",
+    active: true
+  },
+  {
+    id: "pace-2026-q3",
+    permissionKey: "pace2026Q3",
+    title: "PACE 2026 - Q3 Contest",
+    description: "PACE 2026 Q3 Contest.",
+    category: "Contests",
+    icon: "PACE",
+    url: "https://sal19112.github.io/PACE2026/index.html",
+    status: "wip",
     active: true
   },
   // Add future dashboards by copying this example:
