@@ -72,7 +72,7 @@ export const DASHBOARDS = [
     icon: "AW",
     url: "https://dhanyamambilayil.github.io/AAE-Win-Back-Dashboard/",
     active: true
-  }
+  },
  {
     id: "wholesale",
     permissionKey: "wholesale",
