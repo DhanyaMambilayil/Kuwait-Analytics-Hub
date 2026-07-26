@@ -572,6 +572,8 @@ svg{display:block}
   font-size:18px;
   font-weight:800;
   color:var(--white);
+  text-transform:uppercase;
+  letter-spacing:.3px;
 }
 
 .category-pill{
@@ -806,4 +808,3 @@ svg{display:block}
 #category-navigation{
   display:contents;
 }
-
