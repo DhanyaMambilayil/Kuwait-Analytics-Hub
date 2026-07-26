@@ -1,6 +1,11 @@
 // Edit this single list whenever you want to add, remove or rename a dashboard.
 // permissionKey must match the Boolean field in the user's Firestore document.
 // Admin users (admin: true) see all active dashboards.
+//
+// Optional "status" field controls the badge shown on a dashboard's card:
+//   status: "wip"     -> shows a "Work in Progress" badge and disables the link
+//   status: "pending" -> shows an "Update Pending" badge, link stays clickable
+//   omitted / "live"  -> no badge, works as normal
 export const DASHBOARDS = [
   {
     id: "retail",
@@ -16,7 +21,7 @@ export const DASHBOARDS = [
     id: "bec-wholesale",
     permissionKey: "becWholesale",
     title: "BEC Wholesale",
-    description: "BEC FX performance dashboard - Wholesale & Retail.",
+    description: "FX performance dashboard - Wholesale & Retail.",
     category: "Wholesale",
     icon: "W",
     url: "https://dhanyamambilayil.github.io/Wholesale-Dashboard/",
@@ -26,7 +31,7 @@ export const DASHBOARDS = [
     id: "aae-wholesale",
     permissionKey: "aaeWholesale",
     title: "AAE Wholesale",
-    description: "AAE FX performance dashboard - Wholesale & Retail.",
+    description: "FX performance dashboard - Wholesale & Retail.",
     category: "Wholesale",
     icon: "W",
     url: "https://dhanyamambilayil.github.io/AAE-Wholesale-Dashboard/",
@@ -94,3 +99,4 @@ export const DASHBOARDS = [
   //   active: true
   // }
 ];
+
