@@ -569,7 +569,7 @@ svg{display:block}
 .dashboard-card strong.dashboard-title{
   display:block;
   margin-bottom:4px;
-  font-size:15px;
+  font-size:18px;
   font-weight:800;
   color:var(--white);
 }
@@ -806,3 +806,4 @@ svg{display:block}
 #category-navigation{
   display:contents;
 }
+
