@@ -1,7 +1,6 @@
 // Edit this single list whenever you want to add, remove or rename a dashboard.
 // permissionKey must match the Boolean field in the user's Firestore document.
 // Admin users (admin: true) see all active dashboards.
-
 export const DASHBOARDS = [
   {
     id: "retail",
@@ -14,13 +13,23 @@ export const DASHBOARDS = [
     active: true
   },
   {
-    id: "wholesale",
-    permissionKey: "wholesale",
+    id: "bec-wholesale",
+    permissionKey: "becWholesale",
     title: "BEC Wholesale",
     description: "FX performance dashboard - Wholesale & Retail.",
     category: "Wholesale",
     icon: "W",
     url: "https://dhanyamambilayil.github.io/Wholesale-Dashboard/",
+    active: true
+  },
+  {
+    id: "aae-wholesale",
+    permissionKey: "aaeWholesale",
+    title: "AAE Wholesale",
+    description: "FX performance dashboard - Wholesale & Retail.",
+    category: "Wholesale",
+    icon: "W",
+    url: "https://dhanyamambilayil.github.io/AAE-Wholesale-Dashboard/",
     active: true
   },
   {
@@ -71,16 +80,6 @@ export const DASHBOARDS = [
     category: "Contests",
     icon: "AW",
     url: "https://dhanyamambilayil.github.io/AAE-Win-Back-Dashboard/",
-    active: true
-  },
- {
-    id: "wholesale",
-    permissionKey: "wholesale",
-    title: "AAE Wholesale",
-    description: "FX performance dashboard - Wholesale & Retail.",
-    category: "Wholesale",
-    icon: "W",
-    url: "https://dhanyamambilayil.github.io/AAE-Wholesale-Dashboard/",
     active: true
   },
   // Add future dashboards by copying this example:
