@@ -198,6 +198,11 @@ window.addEventListener("DOMContentLoaded", () => {
       .toUpperCase();
   }
 
+  const STATUS_LABELS = {
+    wip: "Coming Soon",
+    pending: "Update Pending"
+  };
+
   function createCard(item) {
     const card = document.createElement("div");
     card.className = "dashboard-card";
@@ -205,8 +210,28 @@ window.addEventListener("DOMContentLoaded", () => {
     const style = getCategoryStyle(item.category);
     const toneAttr = style.tone ? ` data-tone="${style.tone}"` : "";
 
+    const status = item.status && item.status !== "live" ? item.status : null;
+    const statusLabel = status ? STATUS_LABELS[status] : null;
+    const statusBadge = statusLabel
+      ? `<span class="status-badge" data-status="${status}">${statusLabel}</span>`
+      : "";
+
+    if (status) {
+      card.classList.add("is-" + status);
+    }
+
+    const linkHtml = `<a class="view-button"
+           href="${item.url}"
+           target="_blank"
+           rel="noopener noreferrer">
+          View Dashboard <span>→</span>
+        </a>`;
+
     card.innerHTML = `
-      <div class="dashboard-icon">${getDashboardCode(item)}</div>
+      <div class="dashboard-card-top">
+        <div class="dashboard-icon">${getDashboardCode(item)}</div>
+        ${statusBadge}
+      </div>
 
       <span class="category-pill"${toneAttr}>${item.category}</span>
 
@@ -214,12 +239,7 @@ window.addEventListener("DOMContentLoaded", () => {
 
       <p class="dashboard-description">${item.description}</p>
 
-      <a class="view-button"
-         href="${item.url}"
-         target="_blank"
-         rel="noopener noreferrer">
-        View Dashboard <span>→</span>
-      </a>
+      ${linkHtml}
 
       <div class="dashboard-decor" data-icon="${style.icon}"></div>
     `;
