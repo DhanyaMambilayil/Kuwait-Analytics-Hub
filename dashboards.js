@@ -115,7 +115,7 @@ export const DASHBOARDS = [
     category: "Contests",
     icon: "PACE",
     url: "https://sal19112.github.io/PACE2026/index.html",
-    status: "wip",
+    status: "live",
     active: true
   },
   // Add future dashboards by copying this example:
