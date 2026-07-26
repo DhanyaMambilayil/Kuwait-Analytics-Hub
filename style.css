@@ -243,7 +243,7 @@ svg{display:block}
 
 .brand-subtitle{
   margin-top:6px;
-  margin-left:44px;   /* ← new: aligns "Kuwait" under the wordmark instead of the icon */
+  margin-left:44px;
   font-size:13px;
   color:var(--muted);
   font-weight:600;
@@ -511,6 +511,36 @@ svg{display:block}
   transform:translateY(-2px);
 }
 
+.dashboard-card-top{
+  display:flex;
+  align-items:flex-start;
+  justify-content:space-between;
+  gap:8px;
+  margin-bottom:8px;
+}
+
+.status-badge{
+  flex:0 0 auto;
+  padding:3px 9px;
+  border-radius:20px;
+  font-size:10px;
+  font-weight:800;
+  letter-spacing:.3px;
+  white-space:nowrap;
+}
+
+.status-badge[data-status="wip"]{
+  background:rgba(34,197,94,.18);
+  color:#4ade80;
+  box-shadow:inset 0 0 0 1px rgba(34,197,94,.35);
+}
+
+.status-badge[data-status="pending"]{
+  background:rgba(250,204,21,.18);
+  color:#fde047;
+  box-shadow:inset 0 0 0 1px rgba(250,204,21,.35);
+}
+
 .dashboard-decor{
   position:absolute;
   right:12px;
@@ -527,7 +557,6 @@ svg{display:block}
   height:32px;
   display:grid;
   place-items:center;
-  margin-bottom:8px;
   border-radius:9px;
   background:rgba(230,167,35,.10);
   border:1.5px solid var(--gold-dim);
