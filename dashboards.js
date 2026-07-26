@@ -2,10 +2,11 @@
 // permissionKey must match the Boolean field in the user's Firestore document.
 // Admin users (admin: true) see all active dashboards.
 //
-// Optional "status" field controls the badge shown on a dashboard's card:
-//   status: "wip"     -> shows a "Work in Progress" badge and disables the link
-//   status: "pending" -> shows an "Update Pending" badge, link stays clickable
-//   omitted / "live"  -> no badge, works as normal
+// "status" controls the badge shown on a dashboard's card. Just change the
+// value on the entry you want to flag:
+//   status: "live"    -> no badge, works as normal (default)
+//   status: "wip"     -> green "Coming Soon" badge
+//   status: "pending" -> yellow "Update Pending" badge
 export const DASHBOARDS = [
   {
     id: "retail",
@@ -15,6 +16,7 @@ export const DASHBOARDS = [
     category: "Retail",
     icon: "R",
     url: "https://dhanyamambilayil.github.io/Kuwait-Branch-Performance-Dashboard/",
+    status: "live",
     active: true
   },
   {
@@ -25,6 +27,7 @@ export const DASHBOARDS = [
     category: "Wholesale",
     icon: "W",
     url: "https://dhanyamambilayil.github.io/Wholesale-Dashboard/",
+    status: "live",
     active: true
   },
   {
@@ -35,6 +38,7 @@ export const DASHBOARDS = [
     category: "Wholesale",
     icon: "W",
     url: "https://dhanyamambilayil.github.io/AAE-Wholesale-Dashboard/",
+    status: "live",
     active: true
   },
   {
@@ -45,6 +49,7 @@ export const DASHBOARDS = [
     category: "Corporate",
     icon: "C",
     url: "https://dhanyamambilayil.github.io/Al-Ansari-Corporate-Desk-Dashboard/",
+    status: "pending",
     active: true
   },
   {
@@ -55,6 +60,7 @@ export const DASHBOARDS = [
     category: "Customer Analytics",
     icon: "CB",
     url: "https://dhanyamambilayil.github.io/Customer-base-Dashboard/",
+    status: "wip",
     active: true
   },
   {
@@ -65,6 +71,7 @@ export const DASHBOARDS = [
     category: "Market Intelligence",
     icon: "CP",
     url: "https://dhanyamambilayil.github.io/Competitive-Presence-Heatmap/",
+    status: "wip",
     active: true
   },
   {
@@ -75,6 +82,7 @@ export const DASHBOARDS = [
     category: "Contests",
     icon: "BW",
     url: "https://dhanyamambilayil.github.io/BEC-Win-Back-Dashboard/",
+    status: "live",
     active: true
   },
   {
@@ -85,6 +93,7 @@ export const DASHBOARDS = [
     category: "Contests",
     icon: "AW",
     url: "https://dhanyamambilayil.github.io/AAE-Win-Back-Dashboard/",
+    status: "live",
     active: true
   },
   // Add future dashboards by copying this example:
@@ -96,7 +105,7 @@ export const DASHBOARDS = [
   //   category: "Governance",
   //   icon: "AU",
   //   url: "PASTE_THE_FULL_GITHUB_PAGES_URL_HERE",
+  //   status: "live",
   //   active: true
   // }
 ];
-
