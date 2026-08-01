@@ -23,7 +23,7 @@ export const DASHBOARDS = [
     id: "retail",
     permissionKey: "retail",
     title: "Retail Performance - Daily",
-    description: "Branch Performance Dashboard, Area-wise Performance.",
+    description: "Branch Performance Dashboard, Current Month.",
     category: "Retail",
     icon: "R",
     url: "https://dhanyamambilayil.github.io/Kuwait-Branch-Performance-Dashboard/",
