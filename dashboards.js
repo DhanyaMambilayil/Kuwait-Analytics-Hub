@@ -22,7 +22,7 @@ export const DASHBOARDS = [
   {
     id: "retail",
     permissionKey: "retail",
-    title: "Retail Performance",
+    title: "Retail Performance - Daily",
     description: "Branch Performance Dashboard, Area-wise Performance.",
     category: "Retail",
     icon: "R",
