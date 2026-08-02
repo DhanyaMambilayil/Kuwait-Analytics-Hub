@@ -16,7 +16,7 @@ export const DASHBOARDS = [
     category: "Executive Overview",
     icon: "KES",
     url: "https://dhanyamambilayil.github.io/Kuwait-Executive-Scorecard/",
-    status: "wip",
+    status: "live",
     active: true
   },
   {
@@ -59,7 +59,7 @@ export const DASHBOARDS = [
     category: "Wholesale",
     icon: "W",
     url: "https://dhanyamambilayil.github.io/AAE-Wholesale-Dashboard/",
-    status: "live",
+    status: "pending",
     active: true
   },
   {
