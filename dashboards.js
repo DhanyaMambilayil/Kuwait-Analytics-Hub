@@ -32,7 +32,7 @@ export const DASHBOARDS = [
   },{
   id: "retail-monthly-performance",
   permissionKey: "retailMonthly",
-  title: "Retail Monthly Performance",
+  title: "Retail Performance - Daily",
   description: "Monthly retail performance trends and summary.",
   category: "Retail",
   icon: "RM",
