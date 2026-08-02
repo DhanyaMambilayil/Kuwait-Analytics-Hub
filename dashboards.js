@@ -29,7 +29,17 @@ export const DASHBOARDS = [
     url: "https://dhanyamambilayil.github.io/Kuwait-Branch-Performance-Dashboard/",
     status: "live",
     active: true
-  },
+  },{
+  id: "retail-monthly-performance",
+  permissionKey: "retailMonthly",
+  title: "Retail Monthly Performance",
+  description: "Monthly retail performance trends and summary.",
+  category: "Retail",
+  icon: "RM",
+  url: "https://dhanyamambilayil.github.io/Retail-Monthly-Performance/",
+  status: "live",
+  active: true
+},
   {
     id: "bec-wholesale",
     permissionKey: "becWholesale",
